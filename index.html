@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Penn Ryan — A Mother… Simple Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A lightweight, brutalist personal site for work and notes.">
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-head">
+    <nav aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>This is a motherf—ing website.</h1>
+    <p class="lede">And it's fast, readable, and shows my work without 13MB of glitter.</p>
+
+    <h2>Seriously, what else do you need?</h2>
+    <p>Here’s what this site optimizes for:</p>
+    <ul>
+      <li>Loads quickly (no frameworks, no JS).</li>
+      <li>Works on all screens and browsers.</li>
+      <li>Accessible, keyboard‑friendly, and readable.</li>
+      <li>Images are responsive and lazy‑loaded.</li>
+      <li>Menus are simple. Content is the point.</li>
+    </ul>
+
+    <hr>
+
+    <section id="work" aria-labelledby="work-title">
+      <h2 id="work-title">Work</h2>
+      <p>Drop images in <code>/images/work/</code> and duplicate a <code>&lt;figure&gt;</code> block like below. Keep alt text meaningful.</p>
+
+      <div class="grid">
+        <!-- Example piece 1 -->
+        <figure>
+          <img src="images/work/photo-01.jpg"
+               alt="Project 01 — short descriptive alt"
+               loading="lazy" decoding="async">
+          <figcaption>
+            <strong>Project 01</strong> — one‑sentence note about what this is.
+          </figcaption>
+        </figure>
+
+        <!-- Example piece 2 -->
+        <figure>
+          <img src="images/work/photo-02.jpg"
+               alt="Project 02 — short descriptive alt"
+               loading="lazy" decoding="async">
+          <figcaption>
+            <strong>Project 02</strong> — materials, year, or context.
+          </figcaption>
+        </figure>
+
+        <!-- Add more <figure> blocks as needed -->
+      </div>
+    </section>
+
+    <hr>
+
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <p>I'm Penn Ryan. I make things and keep them simple. If you want the longer bio, ask me over coffee.</p>
+    </section>
+
+    <hr>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>
+        Email: <a href="mailto:hello@pennryan.com">hello@pennryan.com</a><br>
+        Instagram: <a href="https://instagram.com/yourhandle" rel="me">yourhandle</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <small>© <span id="year">2025</span> Penn Ryan. Built with HTML &amp; CSS. No cookies, no tracking.</small>
+  </footer>
+
+  <!-- No JS needed; this one-liner just updates the year if JS is available -->
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
