@@ -1,0 +1,72 @@
+/* Lightweight, brutalist-ish styles. ~2 KB */
+:root{
+  --max: 72ch;
+  --pad: clamp(16px, 3vw, 32px);
+  --fg: #111;
+  --bg: #fff;
+  --muted: #555;
+  --border: #ddd;
+}
+* { box-sizing: border-box; }
+html { color-scheme: light dark; }
+body {
+  margin: 0;
+  padding: var(--pad);
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 18px/1.6 ui-serif, Georgia, "Times New Roman", serif;
+  text-rendering: optimizeLegibility;
+}
+main { max-width: var(--max); margin: 0 auto; }
+
+.site-head, .site-foot {
+  max-width: var(--max);
+  margin: 0 auto var(--pad);
+}
+.site-head nav {
+  display: flex;
+  gap: 1rem;
+  font: 500 14px/1 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+.site-head a { text-decoration: none; border-bottom: 1px solid currentColor; }
+.site-head a:hover { background: #ff0; }
+
+h1,h2,h3 { line-height: 1.2; margin: 1.2em 0 .4em; }
+h1 { font-size: clamp(2rem, 4vw + 1rem, 3.2rem); }
+h2 { font-size: clamp(1.4rem, 1.4vw + 1rem, 2rem); }
+.lede { font-size: 1.125rem; color: var(--muted); }
+
+ul { padding-left: 1.2em; }
+li + li { margin-top: .25em; }
+hr {
+  border: 0; border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+a { color: inherit; }
+a:hover { background: #ff0; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .95em; }
+
+img { max-width: 100%; height: auto; display: block; }
+figure { margin: 0; }
+figcaption { color: var(--muted); font-size: .95rem; margin-top: .5rem; }
+
+/* Simple responsive grid for work images */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(12px, 2vw, 20px);
+}
+@media (min-width: 700px) {
+  .grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (min-width: 1100px) {
+  .grid { grid-template-columns: repeat(3,1fr); }
+}
+
+.site-foot { margin-top: 3rem; color: var(--muted); }
+
+/* Respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto; }
+}
