@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Penn Ryan — Work</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <nav aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="work.html" aria-current="page">Work</a>
+    <a href="mailto:hello@pennryan.com">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Work</h1>
+  <p class="lede">Pick a category.</p>
+
+  <div class="grid">
+    <section class="category">
+      <a class="title" href="design.html">Design</a>
+      <a href="design.html">
+        <img src="images/categories/design-thumb.jpg" alt="Design category thumbnail" loading="lazy" decoding="async">
+      </a>
+    </section>
+
+    <section class="category">
+      <a class="title" href="performance.html">Performance</a>
+      <a href="performance.html">
+        <img src="images/categories/performance-thumb.jpg" alt="Performance category thumbnail" loading="lazy" decoding="async">
+      </a>
+    </section>
+
+    <section class="category">
+      <a class="title" href="art.html">Art</a>
+      <a href="art.html">
+        <img src="images/categories/art-thumb.jpg" alt="Art category thumbnail" loading="lazy" decoding="async">
+      </a>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <small>© <span id="year">2025</span> Penn Ryan</small>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
