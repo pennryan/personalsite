@@ -1,0 +1,140 @@
+:root{
+  --pad: 20px;
+  --rail: 240px;
+  --maxw: 1440px;
+  --fg: #000;
+  --muted: #444;
+  --bg: #fff;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color:var(--fg);
+  background:var(--bg);
+}
+
+/* Force links to stay black (no blue/purple visited) */
+a, a:visited, a:hover, a:active, a:focus{
+  color: var(--fg);
+  text-decoration: none;
+}
+a:hover{ text-decoration: underline; }
+
+header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(8px);
+  padding: var(--pad);
+  /* no divider line */
+}
+
+.title{
+  display:flex;
+  align-items:baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.title h1{
+  margin:0;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: .2px;
+}
+
+.title p{
+  margin:0;
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 80ch;
+}
+
+.shell{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display:grid;
+  grid-template-columns: var(--rail) 1fr;
+  min-height: calc(100vh - 68px);
+}
+
+nav{
+  position: sticky;
+  top: 68px;
+  align-self:start;
+  height: calc(100vh - 68px);
+  overflow:auto;
+  padding: var(--pad);
+  padding-top: calc(var(--pad) + 18px); /* extra space below header */
+}
+
+nav a{
+  display:block;
+  text-decoration:none;
+  font-size: 14px;
+  padding: 10px 0; /* slightly more breathing room */
+}
+
+main{
+  padding: var(--pad);
+}
+
+/* Image feed */
+.feed{
+  display:grid;
+  gap: 28px;
+}
+
+figure{
+  margin:0;
+}
+
+/* No borders, square corners */
+.img{
+  display:block;
+  width:100%;
+  aspect-ratio: 16 / 9;      /* tweak per project if needed */
+  object-fit: cover;
+  border-radius: 0;          /* square edges */
+  background: #eee;
+}
+
+figcaption{
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--fg);
+}
+
+.cap-top{
+  font-weight: 650;
+}
+
+.cap-sub{
+  color: var(--muted);
+  font-weight: 400;
+}
+
+/* Optional “two-up” layout */
+.twoUp{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+@media (max-width: 920px){
+  .shell{ grid-template-columns: 1fr; }
+  nav{
+    position: static;
+    height:auto;
+    padding-bottom: 0;
+  }
+  main{ padding-top: 10px; }
+  .twoUp{ grid-template-columns: 1fr; }
+}
