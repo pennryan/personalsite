@@ -92,11 +92,11 @@ main{
 
 /* Text-only pages */
 .text-page{
-  max-width: 1100px;
+  max-width: 1200px;
 }
 
 .text-page .cap-sub{
-  max-width: 980px;
+  max-width: 1000px;
 }
 
 figure{
